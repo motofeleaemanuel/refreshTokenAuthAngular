@@ -1,0 +1,80 @@
+<div class="flex flex-col flex-auto min-w-0 dark:bg-transparent overflow-auto">
+
+    <!-- Header -->
+    <div
+        class="bg-card relative flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between py-8 px-6 md:px-8 border-b">
+        <!-- Loader -->
+        <div class="absolute inset-x-0 bottom-0" *ngIf="isLoading">
+            <mat-progress-bar [mode]="'indeterminate'"></mat-progress-bar>
+        </div>
+        <!-- Title -->
+        <div class="text-4xl font-extrabold tracking-tight">Profile Settings</div>
+        <!-- Actions -->
+    </div>
+    <div class="w-full h-full p-10">
+        <div class="max-w-180 m-auto h-full">
+            <fuse-card class="flex flex-col p-6 w-full h-auto">
+                <div class="w-full flex flex-col justify-center items-center mb-4">
+                    <div class="w-50 h-50 flex justify-center items-center">
+                        <!-- <img class="w-full h-full rounded-full" *ngIf="user.avatar" [src]="user.avatar" alt="User avatar"> -->
+                        <mat-icon class="w-40 h-40 min-w-40 min-h-40 text-[10rem] leading-[10rem]"
+                            [svgIcon]="'heroicons_solid:user-circle'"></mat-icon>
+                    </div>
+                    <div class="text-3xl font-bold">
+                        <span>{{user.firstName}} {{user.lastName}}</span>
+                    </div>
+                </div>
+                <div class="flex flex-col p-4">
+                    <div class="flex">
+                        <mat-form-field class="w-full mr-5">
+                            <mat-label>First name</mat-label>
+                            <input id="firstName" matInput>
+                            <!-- <mat-error *ngIf="signInForm.get('email').hasError('required')">
+                            Email address is required
+                        </mat-error>
+                        <mat-error *ngIf="signInForm.get('email').hasError('email')">
+                            Please enter a valid email address
+                        </mat-error> -->
+                        </mat-form-field>
+                        <mat-form-field class="w-full ml-5">
+                            <mat-label>Last name</mat-label>
+                            <input id="lastName" matInput>
+                        </mat-form-field>
+                    </div>
+                    <mat-form-field class="w-full">
+                        <mat-label>Email address</mat-label>
+                        <input id="email" matInput>
+                    </mat-form-field>
+                    <div class="flex">
+                        <mat-form-field class="w-full mr-5">
+                            <mat-label>City</mat-label>
+                            <input id="city" matInput>
+                            <!-- <mat-error *ngIf="signInForm.get('email').hasError('required')">
+                            Email address is required
+                        </mat-error>
+                        <mat-error *ngIf="signInForm.get('email').hasError('email')">
+                            Please enter a valid email address
+                        </mat-error> -->
+                        </mat-form-field>
+                        <mat-form-field class="w-full ml-5">
+                            <mat-label>Country</mat-label>
+                            <input id="country" matInput>
+                        </mat-form-field>
+                    </div>
+                    <mat-form-field class="w-full">
+                        <mat-label>Address</mat-label>
+                        <input id="email" matInput>
+                    </mat-form-field>
+                    <mat-form-field class="w-full">
+                        <mat-label>Phone Number</mat-label>
+                        <input id="email" matInput>
+                    </mat-form-field>
+                </div>
+                <div class="flex justify-end px-4">
+                    <button mat-stroked-button [color]="'primary'" class="mr-2">Cancel</button>
+                    <button mat-flat-button [color]="'primary'" class="ml-2">Save</button>
+                </div>
+            </fuse-card>
+        </div>
+    </div>
+</div>
